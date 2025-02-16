@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/joshz/OneDrive/Documents/maya/projects/default/scenes/Maya assets/GroupCastle/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"C:/Users/joshz/OneDrive/Documents/maya/projects/default/scenes/Maya assets/GroupCastle/Content/Main.umap",
+				"C:/Users/joshz/OneDrive/Documents/maya/projects/default/scenes/Maya assets/GroupCastle/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset"
+			]
+		}
+	]
+}
