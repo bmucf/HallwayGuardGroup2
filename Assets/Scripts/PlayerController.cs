@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
 
     public bool canMove;
+
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.CompareTag("Enemy"))
+        {
+            Debug.Log("Collision detected with Enemy!");
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
