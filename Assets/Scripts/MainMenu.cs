@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     
-    public void PlayGame ()
+    public void PlayGame()
     {
         SceneManager.LoadScene("GameplayPrototypes");
     }
@@ -28,4 +28,5 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+    
 }
