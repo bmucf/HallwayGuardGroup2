@@ -37,13 +37,4 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.collider.CompareTag("Enemy"))
-        {
-            Debug.Log("Collision detected with Enemy!");
-            SceneManager.LoadScene("GameOver");
-        }
-    }
 }

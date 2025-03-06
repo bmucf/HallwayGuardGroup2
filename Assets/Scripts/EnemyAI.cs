@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyTutorial : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class EnemyTutorial : MonoBehaviour
         {
             isChasing = false;
         }
+        if (playerInSightRange)
+        {
+            ChasePlayer();
+        }
         if (!isChasing)
         {
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
@@ -83,5 +88,13 @@ public class EnemyTutorial : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene("gameOver"); // loads scene When player enter the trigger collider
+        }
     }
 }
